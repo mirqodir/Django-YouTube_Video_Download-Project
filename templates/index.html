@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div id="top_section" class=" banner_main">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="container-fluid">
+                                    <div class="carousel-caption relative">
+                                        <div class="row d_flex">
+                                            <div class="col-md-6">
+                                                <div class="con_img">
+                                                    <figure><img class="img_responsive" src="{% static 'images/logo.jpg' %} " alt="#" /></figure>
+                                                </div>
+                                            </div>
+                                                <div class="col-md-6">
+                                                <div class="bluid">
+                                                    <h1>Download videos quickly and easily</h1>
+                                                    <p>download your favorite videos through our site
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                        </div>
+             
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+          <div class="container-fluid">
+                                    <div class="carousel-caption relative">
+                                        <div class="row d_flex">
+                                            <div class="col-md-6">
+                                                <div class="con_img">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form" >
+            <input type="text" name="url" placeholder="get link">
+            <button id="get-video-info" class="btn btn-danger">Download</button>
+      
+        
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+   
+{% endblock content %}

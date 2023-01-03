@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="video__info">
+	<img src="{{url.thumbnail_url}}" alt="video rasmi">
+	<h1 class="video__info">
+		{{url.title}}
+	</h1>
+
+</div>
+
+<form method="POST" action="download" class="download">
+	{% csrf_token %}
+	<select name="itag" class="form-select form-select-lg">
+		{% for i in streams %}
+			<option value="{{i.itag}}">{{i.resolution}}</option>
+		{% endfor %}
+		<option value="audio">mp3</option>
+	</select>
+	
+	<button id= "download" class="btn btn-warning" >Yuklash</button>
+
+<a href="{% url 'index' %}">Bosh saxifa</a>
+<h1>download</h1>
+<div class="creator">
+
+</div>
+</form>
+
+{% endblock content %}
